@@ -1,0 +1,20 @@
+Ligonine. Registratura.
+Registratore gali:
+1. Suvesti nauja pacienta
+2. Paskirti laika ir gyditoja
+3. Suvesti gyditojus
+4. Persiziureti pacientu sarasa
+5. Perziureti gyditoju sarasa
+
+
+Programa gali saugoti duomenis faile.
+
+Hospital. Reception.
+Reception can:
+1. Create new patient
+2. Add time of meting and doctor
+3. Add doctors
+4. Look at patient list
+5. Look at doctors list
+
+Program saves data to file.

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <form
+      action="#"
+      th:action="@{patient/update/{id}(id=${patient.patientId})}"
+      th:object="${patient}"
+      method="post"
+    >
+      <label for="name">Name</label>
+      <input type="text" th:field="*{patientName}" id="name" placeholder="Name" />
+      <span th:if="${#fields.hasErrors('patientName')}" th:errors="*{patientName}"></span>
+      <label for="Record">Patient record</label>
+      <input type="text" th:field="*{patientRecord}" id="patientRecord" placeholder="Record" />
+      <span th:if="${#fields.hasErrors('patientRecord')}" th:errors="*{patientRecord}"></span>
+      <input type="submit" value="Edit patient" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+tree
+sheep
+car
+house
+loop
+elephant
+candy
+lake
+sea
+storage
+basement
