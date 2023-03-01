@@ -30,6 +30,8 @@ public class Thymeleaf36Application {
 				userRepository.save(new User("Berzas", "Zalias", "1578"));
 				userRepository.save(new User("Klevas", "Raudonas", "2233"));
 				userRepository.save(new User("Liepa", "Pilka", "5578"));
+
+
 			}
 		}
 	}
