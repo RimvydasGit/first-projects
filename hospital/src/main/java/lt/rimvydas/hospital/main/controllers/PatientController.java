@@ -25,7 +25,6 @@ public class PatientController {
        patientService.save(patient);
         return "redirect:/patient";
     }
-    // additional CRUD methods
     @GetMapping("/patient")
     public String showPatientList(Model model) {
         model.addAttribute("patients", patientService.findAll());
