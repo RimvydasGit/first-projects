@@ -1,17 +1,26 @@
-package lt.codeacademy.learn.books.entities;
+package lt.codeacademy.learn.authors.entities;
+
+
+import javax.persistence.*;
+
 @Entity
 public class Book {
-    //DTO
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     String name;
     String description;
+    @ManyToOne
+    @JoinColumn(name = "author_Id")
     Author author;
+
     public Book(){}
 
-    public Book(String name, String description, Author author) {
+    public Book(String name,String description, Author author) {
         this.name = name;
         this.description = description;
         this.author = author;
+
     }
 
     public Book(Long id, String name, String description, Author author) {
@@ -19,6 +28,18 @@ public class Book {
         this.name = name;
         this.description = description;
         this.author = author;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", author=" + author +
+                '}';
     }
 
     public Long getId() {

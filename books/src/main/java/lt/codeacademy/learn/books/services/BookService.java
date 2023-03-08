@@ -10,9 +10,9 @@ import java.util.List;
 @Service
 public class BookService {
     List<Book> list = List.of(
-            new Book("This is my A", "John Smith"),
-            new Book("This is my B", "John Smith"),
-            new Book("This is my C", "John Smith")
+            new Book(),
+            new Book(),
+            new Book()
     );
     ArrayList<Book> arrayList = new ArrayList<>(list);
     public Book getBookById(int id) {
