@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shoping section</title>
+  </head>
+  <body>
+    <h2>Shooping list</h2>
+    <div th:switch="${receipts}">
+      <h2 th:case="null">No data about shoping</h2>
+      <div th:case="*" th:object="${receipts}">
+        <div th:each="el : ${receipts}">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Sum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="inscription : ${el.inscriptions}">
+                <td th:text="${inscription.name}"></td>
+                <td th:text="${inscription.price}"></td>
+                <td th:text="${inscription.amount}"></td>
+                <td th:text="${inscription.sum}"></td>
+              </tr>
+              <tr>
+                <td><h5>Sum:</h5></td>
+                <td></td>
+                <td></td>
+                <td><h5 th:text="${el.sum}"></h5></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

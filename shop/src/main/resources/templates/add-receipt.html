@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Receipt</title>
+</head>
+<body>
+    <h1>Chose your products</h1>
+    <div th:switch="${receipt}" >
+        <h2 th:case="null">No data about products</h2>
+       <div th:case="*">
+           <form th:action="@{/submit-receipt}" action="#" th:object=${receipt} method="post">
+            <table>
+                 <label for="pvm">PVM</label> 
+                <input type="number" th:field="*{pvm}" id="pvm">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>Sum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="e,itemStat :*{inscriptions}">
+                        <td hidden><input th:field="*{inscriptions[__${itemStat.index}__].id}"  th:value="${e.id}"></td>
+                        <td th:text="${e.name}"></td>
+                        <td id="price" th:text="${e.price}" th:value="${e.price}" name="price"></td>
+                        <td><input type="number" th:field="*{inscriptions[__${itemStat.index}__].amount}" ></td>
+                        <td th:text="${e.sum}"></td>
+                    </tr>
+                </tbody>
+            </table>
+               <input type="submit" value="buy">
+           </form >
+        </div>
+    </div>
+</body>
+</html>
