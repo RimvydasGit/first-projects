@@ -19,6 +19,17 @@ public class InscriptionDto {
         this.sum = row.getSum();
     }
 
+    @Override
+    public String toString() {
+        return "InscriptionDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", amount=" + amount +
+                ", sum=" + sum +
+                '}';
+    }
+
     public Long getId() {
         return id;
     }

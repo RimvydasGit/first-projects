@@ -26,7 +26,7 @@ public class HomeController {
     }
     @PostMapping("/submit-receipt")
     public String submitReceipt(ReceiptDto receiptDto){
-            System.out.println(receiptDto);
+            System.out.println(receiptDto.toString());
             receiptServices.saveReceipt(receiptDto);
         return "redirect:/api/receipts";
     }
