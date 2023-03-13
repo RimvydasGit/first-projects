@@ -24,6 +24,12 @@ public class HomeController {
         model.addAttribute("articles", articleList);
         return "index";
     }
+    @GetMapping("/view-article/{id}")
+    public String showArticle(@PathVariable("id") long id, Model model) {
+        Article article = articleService.findById(id);
+        model.addAttribute("article", article);
+        return "view-article";
+    }
 
     @GetMapping("/add-article")
     public String getAddArticle(Model model) {
@@ -65,16 +71,5 @@ public class HomeController {
     }
 
 
-//    @PostMapping("/sort")
-//    public String sortByName(Model model) {
-//        articleService.getAllSortedArticles();
-//        model.addAttribute("articles", articleService.findAll());
-//        return "redirect:/news";
-//    }
 
-//    @GetMapping("/sort")
-//    public String getSortByName(Model model) {
-//        model.addAttribute("articles", articleService.findAll());
-//        return "redirect:/news/sort";
-//    }
 }
