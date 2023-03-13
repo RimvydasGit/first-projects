@@ -17,18 +17,45 @@
         <table class="table">
           <thead>
             <tr class="table-info">
-              <th>Article Name</th>
+              <th>
+                <form method="GET" th:action="@{/news}">
+                  <button
+                    class="btn"
+                    type="submit"
+                    name="sort"
+                    th:name="sorted"
+                    value="1"
+                  >
+                    ⇅<b> Article Name</b>
+                  </button>
+                </form>
+              </th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
           </thead>
           <tbody>
-            <tr th:each="article : ${articles}" >
+            <tr th:each="article : ${articles}">
               <td>
-                <a th:href="@{/news/view-article/{id}(id=${article.id})}" th:text="${article.name}"></a>
+                <a
+                  th:href="@{/news/view-article/{id}(id=${article.id})}"
+                  th:text="${article.name}"
+                ></a>
               </td>
-              <td> <a class="btn btn-warning" th:href="@{news/edit-article/{id}(id=${article.id})}">Edit article</a></td>
-              <td><a class="btn btn-danger" th:href="@{news/delete-article/{id}(id=${article.id})}">Delete article</a></td>
+              <td>
+                <a
+                  class="btn btn-warning"
+                  th:href="@{news/edit-article/{id}(id=${article.id})}"
+                  >Edit article</a
+                >
+              </td>
+              <td>
+                <a
+                  class="btn btn-danger"
+                  th:href="@{news/delete-article/{id}(id=${article.id})}"
+                  >Delete article</a
+                >
+              </td>
             </tr>
           </tbody>
         </table>
@@ -39,18 +66,9 @@
         >
       </p>
     </div>
-    <hr>
-  </div>
-  <p>
-    <form method="GET" th:action="@{/news}">
-      <button class="btn btn-success" type="submit" name="sort" th:name="sorted" value="1">SORT</button>
-    </form>
-    <!-- <a class="btn btn-success" th:onclick="@{/sort}" th:method="sortByName">Sort by Name</a
-    > -->
-  </p>
-</div>
+    <hr />
+    <div class="container">
+      <p></p>
+    </div>
   </body>
 </html>
-<th class="th-sm sorting_asc" tabindex="0" aria-controls="selectedColumn" rowspan="1" colspan="1" aria-label="Name
-          : activate to sort column descending" style="width: 60.6px;" aria-sort="ascending">Name
-          </th>
