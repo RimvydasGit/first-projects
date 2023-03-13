@@ -22,11 +22,15 @@ public class Observer {
 
     private void seedArticlesDummyData() {
         List<Article> articles = List.of(
-                new Article("About trees", "There is five trees"),
-                new Article("About beans", "There was colored beans"),
-                new Article("About chuck", "There was kid chuck"),
-                new Article("About tiger", "tiger was afraid of chuck presence"),
-                new Article("About tiger in agony", "chuck's presence scared the tiger to death")
+                new Article("Parisian streets littered with trash after wave of strikes", "Massive strikes in Paris against pension reform this week are affecting trash pickup services in the French capital, with piles of waste sitting on many of the city’s normally picturesque streets."),
+                new Article("Fox hunting club that first met in the 1700s holds last meet after new law",
+                        "One of Scotland's oldest fox hunts has come to an end after 252 years following the introduction of new law on hunting."),
+                new Article("After a tragic shipwreck, no peace for the dead or living",
+                        "Two weeks after a boat packed with migrants sank off the coast of southern Italy, there is still no peace for the living or the dead."),
+                new Article("What to know about hypersonic missiles fired by Russia at Ukraine",
+                        "A Russian bomber fired three hypersonic missiles at the southern Ukrainian port city of Odesa on Monday night."),
+                new Article("Georgia protests over foreign agents bill continue into second day",
+                        "Tens of thousands of people gathered outside the Georgian parliament on Wednesday in the second day of protests in capital city Tbilisi.")
         );
         articleRepository.saveAll(articles);
     }

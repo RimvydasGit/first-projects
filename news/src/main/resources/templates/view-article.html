@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>View Article</title>
-  <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-  />
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>View Article</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
       html,
       body {
         height: 100%;
@@ -27,9 +27,10 @@
         height: 30%;
       }
       .para {
-        display: flex;
         justify-content: center;
         align-items: center;
+        vertical-align: top;
+        text-align: center;
         height: 60%;
       }
       .btn-back {
@@ -39,14 +40,14 @@
         margin-bottom: 10px;
       }
     </style>
-</head>
-<body class="text-bg-light">
-<div class="container">
-  <h1 for="name" id="name">[[${article.name}]]</h1>
-  <p class="para" for="text" type="text" id="text">[[${article.text}]]</p>
-  <div class="btn-back">
-    <a href="/news" class="btn btn-warning">Back to main</a>
-  </div>
-</div>
-</body>
+  </head>
+  <body class="text-bg-light">
+    <div class="container">
+      <h4 for="name" id="name">[[${article.name}]]</h4>
+      <p class="para" for="text" type="text" id="text">[[${article.text}]]</p>
+      <div class="btn-back">
+        <a href="/news" class="btn btn-warning">Back to main</a>
+      </div>
+    </div>
+  </body>
 </html>
